@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Activity | $mart Money</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <style>
+        /* Dark mode for the activity page cards and sections */
+        body[data-theme="dark"] .activity-summary .activity-card, body[data-theme="dark"] .category-breakdown, body[data-theme="dark"] .recent-activity {
+            background-color: var(--card-bg-dark, #1e1e2f); /* The comma and other class is for multiple classes to have the same css styles */
+            color: var(--text-light, #e0e0ff);
+            border: 1px solid var(--border-dark, #444466);
+        }
+
+        body[data-theme="dark"] .activity-card .activity-value,
+        body[data-theme="dark"] .activity-card .activity-label,
+        body[data-theme="dark"] .category-item .category-name,
+        body[data-theme="dark"] .category-item .category-amount,
+        body[data-theme="dark"] .category-item .category-percent,
+        body[data-theme="dark"] .day-item .day-date,
+        body[data-theme="dark"] .day-item .day-spending,
+        body[data-theme="dark"] .day-item .day-transactions {
+            color: var(--text-light, #e0e0ff);
+        }
+
+        body[data-theme="dark"] .recent-title {
+            color: var(--text-light, #e0e0ff);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon"><img src="images/favicon.png" alt="$mart Money Logo"></div>
+            <div class="logo-text"><span style="display: inline; font-size: 30px; font-weight: bold;">$</span>mart Money</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="manager.html">Manager</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="wallet.html">Wallets</a></li>
+                <li><a href="budget.html">Budgets</a></li>
+                <li><a href="multicurrency.html">Multicurrency</a></li>
+                <li><a href="activity.html" class="active">Activity</a></li>
+                <li><a href="more.html">More</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h1 class="page-title">Activity</h1>
+        <p class="subtitle">Visual overview of your spending habits this month</p>
+        <!-- Summary cards -->
+        <div class="activity-summary">
+            <div class="activity-card">
+                <div class="activity-icon" style="color: var(--danger);"><i class="fas fa-arrow-trend-down"></i></div>
+                <div class="activity-value" id="total-spent">RM 0</div>
+                <div class="activity-label">Total Spent This Month</div>
+            </div>
+            <div class="activity-card">
+                <div class="activity-icon" style="color: var(--success);"><i class="fas fa-arrow-trend-up"></i></div>
+                <div class="activity-value">RM 0</div>
+                <div class="activity-label">Total Income</div>
+            </div>
+            <div class="activity-card">
+                <div class="activity-icon" style="color: var(--primary);"><i class="fas fa-calendar-day"></i></div>
+                <div class="activity-value" id="active-days">0</div>
+                <div class="activity-label">Active Days</div>
+            </div>
+            <div class="activity-card">
+                <div class="activity-icon" style="color: var(--warning);"><i class="fas fa-fire"></i></div>
+                <div class="activity-value" id="daily-average">RM 0</div>
+                <div class="activity-label">Daily Average</div>
+            </div>
+        </div>
+
+        <div class="category-breakdown" id="category-breakdown">
+        </div>
+
+        <div class="recent-activity">
+            <h2 class="recent-title">Recent Daily Spending</h2>
+            <div class="day-list" id="recent-days">
+            </div>
+        </div>
+    </main>
+
+        <!-- For the app footer and information and version -->
+    <div class="app-info">
+        <img src="images/favicon.png" alt="$mart Money" class="app-logo">
+        <div class="app-name">$mart Money</div>
+        <div class="app-version">Version 2.4.1 • December 2025</div>
+        <p>Made with ❤️ for smarter financial habits</p>
+        <div class="app-links">
+            <a title="Privacy Policy"><i class="fas fa-shield-alt"></i></a>
+            <a title="Terms of Service"><i class="fas fa-file-contract"></i></a>
+            <a title="Rate App"><i class="fas fa-star"></i></a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

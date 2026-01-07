@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>References | $mart Money</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <style>
+        /* Dark mode support for References page */
+        body[data-theme="dark"] .references-container {
+            background-color: var(--card-bg-dark, #1e1e2f);
+            color: var(--text-light, #e0e0ff);
+            border: 1px solid var(--border-dark, #444466);
+        }
+
+        body[data-theme="dark"] .references-list li {
+            color: var(--text-light, #e0e0ff);
+        }
+
+        body[data-theme="dark"] .references-list a {
+            color: #a0a0ff;
+        }
+
+        body[data-theme="dark"] .references-list a:hover {
+            color: #c0c0ff;
+        }
+
+        /* General styling */
+        .references-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .references-container h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .references-list {
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+
+        .references-list li {
+            margin-bottom: 1rem;
+        }
+
+        .references-list a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .references-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon"><img src="images/favicon.png" alt="$mart Money Logo"></div>
+            <div class="logo-text"><span style="display: inline; font-size: 30px; font-weight: bold;">$</span>mart Money</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="manager.html">Manager</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="wallet.html">Wallets</a></li>
+                <li><a href="budget.html">Budgets</a></li>
+                <li><a href="multicurrency.html">Multicurrency</a></li>
+                <li><a href="activity.html">Activity</a></li>
+                <li><a href="more.html">More</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title">References</h1>
+        <p class="subtitle">Sources and inspirations used in the development of $mart Money</p>
+
+        <div class="references-container">
+            <h2>References</h2>
+            <ol class="references-list">
+                <li>
+                    Flag icons provided by <a href="https://flagcdn.com" target="_blank">FlagCDN</a>
+                </li>
+                <li>
+                    Icons from <a href="https://fontawesome.com" target="_blank">Font Awesome Free 6.5.0</a>
+                </li>
+                <li>
+                    Cool CSS Styling Ideas: <a href="https://www.youtube.com/watch?v=1_7CUVB2a-o" target="_blank">https://www.youtube.com/watch?v=1_7CUVB2a-o</a>
+                </li>
+                <li>
+                    Quote on homepage: Benjamin Franklin – “Beware of little expenses; a small leak will sink a great ship.”
+                </li>
+                <li>
+                    Homepage illustration: <a href="https://www.investopedia.com/terms/s/smart-money.asp" target="_blank">Investopedia – Smart Money</a>
+                </li>
+                <li>
+                    Navbar Tutorial: <a href="https://www.youtube.com/watch?v=Ovl3IxTwS18" target="_blank">https://www.youtube.com/watch?v=Ovl3IxTwS18   </a>
+                </li>
+                <li>
+                    Color palette and UI components styled with CSS variables for light/dark mode support
+                </li>
+                <li>
+                    Made with HTML, CSS and JavaScript
+                </li>
+            </ol>
+        </div>
+    </main>
+
+    <div class="app-info">
+        <img src="images/favicon.png" alt="$mart Money" class="app-logo">
+        <div class="app-name">$mart Money</div>
+        <div class="app-version">Version 2.4.1 • December 2025</div>
+        <p>Made with ❤️ for smarter financial habits</p>
+        <div class="app-links">
+            <a title="Privacy Policy"><i class="fas fa-shield-alt"></i></a>
+            <a title="Terms of Service"><i class="fas fa-file-contract"></i></a>
+            <a title="Rate App"><i class="fas fa-star"></i></a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

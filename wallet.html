@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Wallets | $mart Money</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon"><img src="images/favicon.png" alt="$mart Money Logo"></div>
+            <div class="logo-text"><span>$</span>mart Money</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="manager.html">Manager</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="wallet.html" class="active">Wallets</a></li>
+                <li><a href="budget.html">Budgets</a></li>
+                <li><a href="multicurrency.html">Multicurrency</a></li>
+                <li><a href="activity.html">Activity</a></li>
+                <li><a href="more.html">More</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1 class="page-title">Wallets</h1>
+        <p class="subtitle">Manage all your accounts and cash in one place</p>
+    </div>
+
+    <main class="container">
+        <div id="wallet-grid" class="wallet-grid">
+            <!-- Default wallets -->
+            <div class="wallet-card">
+                <div class="wallet-header" style="background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);">
+                    <div class="badge">Main</div>
+                    <div class="wallet-type">Bank Account</div>
+                    <h2 class="wallet-name">Revolut Personal</h2>
+                    <div class="wallet-balance">3,842.67 <span class="wallet-currency">EUR</span></div>
+                </div>
+                <div class="wallet-body">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-label">This month income</div>
+                            <div class="stat-value income">+1,920.00 €</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">This month expenses</div>
+                            <div class="stat-value expense">-1,347.50 €</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wallet-card">
+                <div class="wallet-header" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+                    <div class="wallet-type">Cash</div>
+                    <h2 class="wallet-name">Wallet Cash</h2>
+                    <div class="wallet-balance">185.00 <span class="wallet-currency">EUR</span></div>
+                </div>
+                <div class="wallet-body">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-label">This month income</div>
+                            <div class="stat-value income">+400.00 €</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">This month expenses</div>
+                            <div class="stat-value expense">-320.00 €</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wallet-card">
+                <div class="wallet-header" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);">
+                    <div class="wallet-type">Savings</div>
+                    <h2 class="wallet-name">Emergency Fund</h2>
+                    <div class="wallet-balance">8,450.00 <span class="wallet-currency">EUR</span></div>
+                </div>
+                <div class="wallet-body">
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-label">This month income</div>
+                            <div class="stat-value income">+500.00 €</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">This month expenses</div>
+                            <div class="stat-value expense">0.00 €</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+    <div class="app-info">
+        <img src="images/favicon.png" alt="$mart Money" class="app-logo">
+        <div class="app-name">$mart Money</div>
+        <div class="app-version">Version 2.4.1 • December 2025</div>
+        <p>Made with ❤️ for smarter financial habits</p>
+        <div class="app-links">
+            <a title="Privacy Policy"><i class="fas fa-shield-alt"></i></a>
+            <a title="Terms of Service"><i class="fas fa-file-contract"></i></a>
+            <a title="Rate App"><i class="fas fa-star"></i></a>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

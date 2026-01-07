@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>More | $mart Money</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --text-main: #1f2937;
+            --text-secondary: #6b7280;
+            --light-bg: #f9fafb;
+            --card-bg: white;
+            --border: #e5e7eb;
+        }
+        
+        [data-theme="dark"] {
+            --text-main: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --light-bg: #0f172a;
+            --card-bg: #1e293b;
+            --border: #334155;
+        }
+
+        * {
+             margin: 0; padding: 0; box-sizing: border-box; 
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container { 
+            max-width: 1000px; margin: 0 auto; padding: 2rem 1.5rem; flex: 1; 
+        }
+
+        .page-title { 
+            font-size: 1.75rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.5rem; text-align: center; 
+        }
+
+        .subtitle { 
+            color: var(--text-secondary); font-size: 1rem; margin-bottom: 2.5rem; text-align: center; 
+        }
+
+        .settings-section { 
+            /* The comma and other class is for multiple classes to have the same css styles */
+            background: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .settings-list {
+             list-style: none; 
+        }
+
+        .settings-item {
+            padding: 1.4rem 1.5rem;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+
+        .settings-item:last-child { 
+            border-bottom: none; 
+        }
+
+        .settings-item:hover { 
+            background: #f8fafc; 
+        }
+
+        [data-theme="dark"] .settings-item:hover { 
+            background: #334155; 
+        }
+
+        .item-left { 
+            display: flex; align-items: center; gap: 1rem; 
+        }
+
+        .item-icon {
+            width: 48px; height: 48px; border-radius: 12px;
+            background: var(--primary); color: white;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem;
+        }
+
+        .item-text { flex: 1; }
+        .item-title { font-weight: 600; font-size: 1.1rem; }
+        .item-desc { font-size: 0.9rem; color: var(--text-secondary); }
+
+        .theme-text {
+            color: white;
+        }
+
+        [data-theme="light"] .theme-text {
+            color: black;
+        }
+
+        .item-right { color: var(--text-secondary); font-size: 1.3rem; }
+
+        .modal {
+            display: none;
+            position: fixed; inset: 0;
+            background: rgba(0,0,0,0.7);
+            align-items: center; justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal.active { display: flex; }
+
+        .modal-content {
+            background: transparent;
+            width: 90%; max-width: 400px; max-height: 80vh; overflow-y: auto;
+            border-radius: 16px;
+            padding: 1rem;
+        }
+
+        .modal-header {
+            padding: 1.5rem 0 1rem;
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+        }
+
+        [data-theme="light"] .modal-header {
+            border-bottom-color: rgba(0,0,0,0.2);
+        }
+
+        .modal-body { 
+            padding: 0 0.5rem; 
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding: 1rem 0;
+        }
+        [data-theme="light"] .faq-item {
+            border-bottom-color: rgba(0,0,0,0.2);
+        }
+        .faq-item:last-child { 
+            border-bottom: none; 
+        }
+
+        .faq-question {
+            display: flex; justify-content: space-between; align-items: center;
+            cursor: pointer; font-weight: 600; padding: 0.5rem 0;
+        }
+
+        .faq-answer {
+            padding: 0.8rem 0; display: none; opacity: 0.9;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block; 
+        }
+
+        .app-info {
+            text-align: center;
+            padding: 2.5rem 1rem 1.5rem;
+            font-size: 0.95rem;
+        }
+        .app-info img { 
+            width: 64px; margin-bottom: 1rem; 
+        }
+        
+        .app-name { 
+            font-size: 1.4rem; font-weight: 700; margin-bottom: 0.3rem;
+        }
+
+        .app-version { 
+            font-weight: 500; margin-bottom: 0.5rem; 
+        }
+
+    </style>
+</head>
+<body data-theme="light">
+    <header>
+        <div class="logo">
+            <div class="logo-icon"><img src="images/favicon.png" alt="$mart Money Logo"></div>
+            <div class="logo-text"><span style="display: inline; font-size: 30px; font-weight: bold;">$</span>mart Money</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="manager.html">Manager</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="wallet.html">Wallets</a></li>
+                <li><a href="budget.html">Budgets</a></li>
+                <li><a href="multicurrency.html">Multicurrency</a></li>
+                <li><a href="activity.html">Activity</a></li>
+                <li><a href="more.html" class="active">More</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h1 class="page-title">More</h1>
+        <p class="subtitle">Settings & Support</p>
+        <div class="settings-section">
+            <ul class="settings-list">
+                <li class="settings-item" id="appearance-btn">
+                    <div class="item-left">
+                        <div class="item-icon"><i class="fas fa-moon"></i></div>
+                        <div class="item-text">
+                            <div class="item-title theme-text">Appearance</div>
+                            <div class="item-desc theme-text">Light / Dark mode</div>
+                        </div>
+                    </div>
+                    <div class="item-right"><i class="fas fa-chevron-right"></i></div>
+                </li>
+
+                <li class="settings-item" id="faq-btn">
+                    <div class="item-left">
+                        <div class="item-icon"><i class="fas fa-question-circle"></i></div>
+                        <div class="item-text">
+                            <div class="item-title theme-text">Help & FAQ</div>
+                            <div class="item-desc theme-text">Guides & common questions</div>
+                        </div>
+                    </div>
+                    <div class="item-right"><i class="fas fa-chevron-right"></i></div>
+                </li>
+
+                <li class="settings-item" onclick="window.location.href='references.html'">
+                    <div class="item-left">
+                        <div class="item-icon"><i class="fas fa-book"></i></div>
+                        <div class="item-text">
+                            <div class="item-title theme-text">References</div>
+                            <div class="item-desc theme-text">Sources & credits</div>
+                        </div>
+                    </div>
+                    <div class="item-right"><i class="fas fa-chevron-right"></i></div>
+                </li>
+
+                <li class="settings-item" onclick="window.location.href='about.html'">
+                    <div class="item-left">
+                        <div class="item-icon"><i class="fas fa-info-circle"></i></div>
+                        <div class="item-text">
+                            <div class="item-title theme-text">About</div>
+                            <div class="item-desc theme-text">App information & version</div>
+                        </div>
+                    </div>
+                    <div class="item-right"><i class="fas fa-chevron-right"></i></div>
+                </li>
+            </ul>
+        </div>
+        <div class="app-info">
+            <img src="images/favicon.png" alt="$mart Money">
+            <div class="app-name theme-text">$mart Money</div>
+            <div class="app-version theme-text">Version 2.4.1 • January 2026</div>
+            <p class="theme-text">Made with ❤️ for smarter financial habits</p>
+        </div>
+    </main>
+
+    <div class="modal" id="faq-modal">
+        <div class="modal-content">
+            <div class="modal-header theme-text">Help & FAQ</div>
+            <div class="modal-body">
+                <div class="faq-item">
+                    <div class="faq-question theme-text">How do I add a new transaction?<i class="fas fa-chevron-down item-right"></i></div>
+                    <div class="faq-answer theme-text">Go to the Manager tab and use the "Add New Expense" form.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question theme-text">Can I set monthly budgets?<i class="fas fa-chevron-down item-right"></i></div>
+                    <div class="faq-answer theme-text">Yes! Go to the Budgets tab and set your monthly budget.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question theme-text">Can I use different currencies?<i class="fas fa-chevron-down item-right"></i></div>
+                    <div class="faq-answer theme-text">Yes! Go to the Multicurrency page to add and remove currencies.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question theme-text">How do I switch to dark mode?<i class="fas fa-chevron-down item-right"></i></div>
+                    <div class="faq-answer theme-text">Click on the "Appearance" button on this More page to turn on dark/light mode instantly.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

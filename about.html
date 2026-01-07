@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>About | $mart Money</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.png" type="image/png">
+    <style>
+        body[data-theme="dark"] .about-container {
+            background-color: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border);
+        }
+
+        body[data-theme="dark"] .about-container h2, /* The comma and other class is for multiple classes to have the same css styles */
+        body[data-theme="dark"] .about-container h3,
+        body[data-theme="dark"] .about-container p,
+        body[data-theme="dark"] .about-container ul li {
+            color: var(--text-main);
+        }
+
+        body[data-theme="dark"] .about-container a {
+            color: #a0a0ff;
+        }
+
+        body[data-theme="dark"] .about-container a:hover {
+            color: #c0c0ff;
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+
+        .about-container h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .about-container h3 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+            font-size: 1.2rem;
+        }
+
+        .about-container p,
+        .about-container ul {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .about-container ul {
+            padding-left: 1.5rem;
+        }
+
+        .about-container a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .about-container a:hover {
+            text-decoration: underline;
+        }
+
+        .version-highlight {
+            font-weight: 600;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon"><img src="images/favicon.png" alt="$mart Money Logo"></div>
+            <div class="logo-text"><span style="display: inline; font-size: 30px; font-weight: bold;">$</span>mart Money</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="manager.html">Manager</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="wallet.html">Wallets</a></li>
+                <li><a href="budget.html">Budgets</a></li>
+                <li><a href="multicurrency.html">Multicurrency</a></li>
+                <li><a href="activity.html">Activity</a></li>
+                <li><a href="more.html">More</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title">About $mart Money</h1>
+        <p class="subtitle">Everything you need to know about the app</p>
+
+        <div class="about-container">
+            <h2>$mart Money v1.1.1</h2>
+            <p>
+                <strong class="version-highlight">Release Date:</strong> January 03, 2026<br>
+                <strong class="version-highlight">Current Version:</strong> 1.0.0<br>
+            </p>
+
+            <h3>What is $mart Money?</h3>
+            <p>
+                $mart Money is a simple, personal finance tracker designed to help students and clients take control of your spending,  
+                track expenses, set budgets, manage multiple currencies, and build better financial habits without ads as it is a free service.
+            </p>
+
+            <h3>Why is $mart Money?</h3>
+            <p>
+                $Smart money was created to provide an easy-to-use money management tool that is accessible to everyone and does not require any sign-in or account creation.
+            </p>
+
+            <h3>Who created $mart Money?</h3>
+            <p>
+                $Smart money was created by an individual developer who is passionate about personal finance and helping others manage their money well.
+            </p>
+
+            <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: var(--text-secondary);">
+                Made with ❤️ for smarter financial habits<br>
+                © 2026 $mart Money. All rights reserved.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer with vwersion and description -->
+    <div class="app-info">
+        <img src="images/favicon.png" alt="$mart Money" class="app-logo">
+        <div class="app-name">$mart Money</div>
+        <div class="app-version">Version 2.4.1 • January 2026</div>
+        <p>Made with ❤️ for smarter financial habits</p>
+        <div class="app-links">
+            <a title="Privacy Policy"><i class="fas fa-shield-alt"></i></a>
+            <a title="Terms of Service"><i class="fas fa-file-contract"></i></a>
+            <a title="Rate App"><i class="fas fa-star"></i></a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

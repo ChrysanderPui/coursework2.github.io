@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Multicurrency | $mart Money</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Make sure that there is the malaysian flag to put as the defult currency */
+        .flag-myr {
+            background-image: url('https://flagcdn.com/w320/my.png');
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon"><img src="images/favicon.png" alt="$mart Money Logo"></div>
+            <div class="logo-text"><span style="display: inline; font-size: 30px; font-weight: bold;">$</span>mart Money</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="manager.html">Manager</a></li>
+                <li><a href="timeline.html">Timeline</a></li>
+                <li><a href="wallet.html">Wallets</a></li>
+                <li><a href="budget.html">Budgets</a></li>
+                <li><a href="multicurrency.html" class="active">Multicurrency</a></li>
+                <li><a href="activity.html">Activity</a></li>
+                <li><a href="more.html">More</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+    <main class="container">
+        <h1 class="page-title">Multicurrency</h1>
+        <p class="subtitle">Set your default currency and manage others</p>
+
+<!-- Currency section -->
+        <section class="section">
+            <h2 class="section-title">Default Currency</h2>
+            <div class="default-currency-card">
+                <div class="currency-info">
+                    <p style="color: var(--gray); margin-bottom: 0.5rem;">Current default</p>
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div id="default-flag" class="currency-flag flag-myr"></div>
+                        <div>
+                            <span id="default-code" class="currency-code">MYR</span>
+                            <span style="color: var(--gray); font-size: 0.95rem;" id="default-name">Malaysian Ringgit</span>
+                        </div>
+                    </div>
+                </div>
+                <select id="default-select" class="currency-select">
+                    <!-- To fill the options using javascript  -->
+                </select>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Your Currencies</h2>
+            <div id="currency-list" class="currency-list">
+            </div>
+            <button id="add-currency-btn" class="add-currency-btn">
+                <i class="fas fa-plus"></i>
+                <span>Add Currency</span>
+            </button>
+        </section>
+    </main>
+
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Add Currency</h3>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-content">
+            </div>
+        </div>
+    </div>
+
+    <div class="app-info">
+        <img src="images/favicon.png" alt="$mart Money" class="app-logo">
+        <div class="app-name">$mart Money</div>
+        <div class="app-version">Version 2.4.1 • December 2025</div>
+        <p>Made with ❤️ for smarter financial habits</p>
+        <div class="app-links">
+            <a title="Privacy Policy"><i class="fas fa-shield-alt"></i></a>
+            <a title="Terms of Service"><i class="fas fa-file-contract"></i></a>
+            <a title="Rate App"><i class="fas fa-star"></i></a>
+        </div>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
